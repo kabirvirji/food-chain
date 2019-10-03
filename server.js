@@ -10,7 +10,7 @@ dotenv.config();
 const accountSid = process.env.SID;
 const authToken = process.env.TOKEN;
 const client = require('twilio')(accountSid, authToken);
-
+const port = process.env.PORT || 8080;
 app.get('/', () => {
   console.log("hello world")
 });
@@ -37,6 +37,6 @@ app.post('/incoming', (req, res) => {
   // res.end(twiml.toString());
 });
 
-http.createServer(app).listen(1337, () => {
-  console.log('Express server listening on port 1337');
+http.createServer(app).listen(port, () => {
+  console.log(`Express server listening on port ${port}`);
 });
