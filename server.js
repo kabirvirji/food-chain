@@ -11,6 +11,9 @@ const accountSid = process.env.SID;
 const authToken = process.env.TOKEN;
 const client = require('twilio')(accountSid, authToken);
 
+app.get('/', () => {
+  console.log("hello world")
+});
 app.post('/incoming', (req, res) => {
 
   // const twiml = new MessagingResponse();
