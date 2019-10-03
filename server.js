@@ -11,9 +11,11 @@ const accountSid = process.env.SID;
 const authToken = process.env.TOKEN;
 const client = require('twilio')(accountSid, authToken);
 
-app.post('/', (req, res) => {
+app.post('/incoming', (req, res) => {
 
   // const twiml = new MessagingResponse();
+
+  console.log("got text")
 
   if (req.body.Body !== undefined) {
     // twiml.message(req.body.Body);
